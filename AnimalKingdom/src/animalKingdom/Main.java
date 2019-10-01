@@ -3,8 +3,16 @@ package animalKingdom;
 import java.util.*;
 
 public class Main {
+
+    public static void printAnimals(ArrayList<Animal> animal, CheckAnimal tester) {
+        for (Animal a : animal) {
+            if (tester.test(a)) {
+                System.out.println(a.getName() + ", " + a.getYear());
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello World");
 
         Mammals panda = new Mammals("Panda", 1869, 10);
         Mammals zebra = new Mammals("Zebra", 1778, 13);
@@ -54,32 +62,36 @@ public class Main {
         System.out.println(animalList.toString());
         System.out.println();
         System.out.println("*** List only those animals the breath with lungs ***");
-        animalList.forEach(animal -> {
-            if (animal.breath() == "lungs") {
-                System.out.println(animal);
-            }
-        });
+        printAnimals(animalList, a -> a.breath() == "lungs");
+        // animalList.forEach(animal -> {
+        // if (animal.breath() == "lungs") {
+        // System.out.println(animal);
+        // }
+        // });
         System.out.println();
         System.out.println("*** List only those animals that breath with lungs and were named in 1758 ***");
-        animalList.forEach(animal -> {
-            if (animal.breath() == "lungs" && animal.getYear() == 1758) {
-                System.out.println(animal);
-            }
-        });
+        printAnimals(animalList, a -> a.breath() == "lungs" && a.getYear() == 1758);
+        // animalList.forEach(animal -> {
+        // if (animal.breath() == "lungs" && animal.getYear() == 1758) {
+        // System.out.println(animal);
+        // }
+        // });
         System.out.println();
         System.out.println("*** List only those animals that lay eggs and breath with lungs ***");
-        animalList.forEach(animal -> {
-            if (animal.reproduce() == "eggs" && animal.breath() == "lungs") {
-                System.out.println(animal);
-            }
-        });
+        printAnimals(animalList, a -> a.reproduce() == "eggs" && a.breath() == "lungs");
+        // animalList.forEach(animal -> {
+        // if (animal.reproduce() == "eggs" && animal.breath() == "lungs") {
+        // System.out.println(animal);
+        // }
+        // });
         System.out.println();
         System.out.println("*** List alphabetically only those animals that were named in 1758 ***");
         animalList.sort((a, b) -> a.getName().compareToIgnoreCase(b.getName()));
-        animalList.forEach(animal -> {
-            if (animal.getYear() == 1758) {
-                System.out.println(animal);
-            }
-        });
+        printAnimals(animalList, a -> a.getYear() == 1758);
+        // animalList.forEach(animal -> {
+        // if (animal.getYear() == 1758) {
+        // System.out.println(animal);
+        // }
+        // });
     }
 }
