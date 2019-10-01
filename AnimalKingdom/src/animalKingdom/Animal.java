@@ -4,16 +4,12 @@ public abstract class Animal {
     public static int maxId = 0;
 
     public int id;
-    public String name;
-    public int year;
-    public int energy;
+    protected int energy;
 
-    public Animal(String name, int year) {
+    public Animal(int energy) {
         maxId++;
         id = maxId;
-
-        this.name = name;
-        this.year = year;
+        this.energy = energy;
     }
 
     // default constructor
