@@ -11,6 +11,16 @@ public class Fish extends Animal {
     }
 
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getYear() {
+        return year;
+    }
+
+    @Override
     public String move() {
         return "swim";
     }
@@ -27,6 +37,6 @@ public class Fish extends Animal {
 
     @Override
     public String toString() {
-        return "Mammal{ name: " + name + "Year Named: " + year + "}";
+        return "\nFish{ name: " + name + " Year Named: " + year + "}";
     }
 }

@@ -3,7 +3,7 @@ package animalKingdom;
 public abstract class Animal {
     public static int maxId = 0;
 
-    public int id;
+    protected int id;
     protected int energy;
 
     public Animal(int energy) {
@@ -23,7 +23,15 @@ public abstract class Animal {
 
     public abstract String reproduce();
 
+    public abstract String getName();
+
+    public abstract int getYear();
+
     public void eat(int i) {
         energy = energy + i;
+    }
+
+    public int getEnergyLevel() {
+        return energy;
     }
 }
