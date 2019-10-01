@@ -41,12 +41,14 @@ public class Main {
         animalList.add(catfish);
         animalList.add(perch);
 
-        System.out.println(panda.getEnergyLevel());
-        System.out.println(animalList.toString());
-        animalList.sort((a, b) -> b.getYear() - a.getYear());
-        System.out.println();
         System.out.println("*** Animals in Descending Order By Year ***");
+        animalList.sort((a, b) -> b.getYear() - a.getYear());
         System.out.println(animalList.toString());
+        System.out.println();
+        System.out.println("*** Animals in alphabetical order ***");
+        animalList.sort((a, b) -> a.getName().compareToIgnoreCase(b.getName()));
+        System.out.println(animalList.toString());
+        System.out.println();
 
     }
 }
