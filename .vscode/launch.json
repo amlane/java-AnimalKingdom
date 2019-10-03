@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "animalKingdom.Main",
+            "projectName": "java-AnimalKingdom_e08c6ad7"
+        }
+    ]
+}
