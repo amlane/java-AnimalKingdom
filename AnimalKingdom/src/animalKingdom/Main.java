@@ -93,5 +93,9 @@ public class Main {
         // System.out.println(animal);
         // }
         // });
+        System.out.println();
+        System.out.println("*** List alphabetically those animals that are mammals ***");
+        animalList.sort((a, b) -> a.getName().compareToIgnoreCase(b.getName()));
+        printAnimals(animalList, a -> a instanceof Mammals);
     }
 }
